@@ -20,10 +20,10 @@ public class Main {
                     inputData();
                     break;
                 case 2:
-                    System.out.println("Update");
+                    calcData();
                     break;
                 case 3:
-                    System.out.println("Update");
+                    findMax();
                     break;
                 case 4:
                     displayData();
@@ -40,14 +40,32 @@ public class Main {
     private static void inputData() {
         System.out.println("nhap du lieu");
         if (scanner.hasNextDouble()) {
-                double val = scanner.nextDouble();
-                numbers.add(val);
+            double val = scanner.nextDouble();
+            numbers.add(val);
         } else {
-                System.out.println("vui long nhap lai");
-                scanner.next();
-            }
+            System.out.println("vui long nhap lai");
+            scanner.next();
         }
-
+    }
+    private static void calcData(){
+        if (numbers.isEmpty()){
+            System.out.println(" Danh sách đang trống!");
+        }else {
+            double sum = 0;
+            for(double n : numbers){
+                sum += n;
+            }
+            System.out.println("=> Tổng các số đã nhập: " + sum);
+        }
+    }
+    private static void findMax(){
+        if(numbers.isEmpty()){
+            System.out.println(" Danh sách đang trống!");
+        }else {
+            double max = java.util.Collections.max(numbers);
+            System.out.println("Số lớn nhất trong danh sách là" +  max);
+        }
+    }
     private static void displayData(){
         if (numbers.isEmpty()) {
             System.out.println("Danh sách hiện đang trống.");
