@@ -23,7 +23,7 @@ public class Main {
                     calcData();
                     break;
                 case 3:
-                    System.out.println("Update");
+                    findMax();
                     break;
                 case 4:
                     displayData();
@@ -49,7 +49,7 @@ public class Main {
         }
         private static void calcData(){
         if (numbers.isEmpty()){
-            System.out.println("=> Danh sách đang trống!");
+            System.out.println(" Danh sách đang trống!");
         }else {
             double sum = 0;
             for(double n : numbers){
@@ -58,7 +58,14 @@ public class Main {
             System.out.println("=> Tổng các số đã nhập: " + sum);
         }
         }
-
+    private static void findMax(){
+        if(numbers.isEmpty()){
+            System.out.println(" Danh sách đang trống!");
+        }else {
+            double max = java.util.Collections.max(numbers);
+            System.out.println("Số lớn nhất trong danh sách là" +  max);
+        }
+    }
     private static void displayData(){
         if (numbers.isEmpty()) {
             System.out.println("Danh sách hiện đang trống.");
