@@ -20,7 +20,7 @@ public class Main {
                     inputData();
                     break;
                 case 2:
-                    System.out.println("Update");
+                    calcData();
                     break;
                 case 3:
                     System.out.println("Update");
@@ -46,6 +46,17 @@ public class Main {
                 System.out.println("vui long nhap lai");
                 scanner.next();
             }
+        }
+        private static void calcData(){
+        if (numbers.isEmpty()){
+            System.out.println("=> Danh sách đang trống!");
+        }else {
+            double sum = 0;
+            for(double n : numbers){
+                sum += n;
+            }
+            System.out.println("=> Tổng các số đã nhập: " + sum);
+        }
         }
 
     private static void displayData(){
